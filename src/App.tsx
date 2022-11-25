@@ -15,7 +15,7 @@ function App() {
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/posts')
       .then(response => response.json())
-      .then(json => console.log(json))
+      .then(json => setState(json))
   }, [])
 
   const deleteHandler = () => {
@@ -24,7 +24,7 @@ function App() {
   const postsHandler = () => {
     fetch('https://jsonplaceholder.typicode.com/posts')
       .then(response => response.json())
-      .then(json => console.log(json))
+      .then(json => setState(json))
   }
 
   return (
@@ -35,7 +35,7 @@ function App() {
         {state.map(el => {
           return (
             <li key={el.id}>
-              <span>{el.id}123</span>
+              <span>{el.id}</span>
               <span>{el.title}</span>
             </li>
           )
